@@ -24,6 +24,9 @@ public class User {
     @Column(name = "age")
     private Integer age;
 
+    @Column(name = "role")
+    private String role;
+
     public User() { }
 
     public User(String email, String password, String name, Integer age) {

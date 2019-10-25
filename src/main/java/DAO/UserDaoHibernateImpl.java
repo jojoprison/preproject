@@ -2,8 +2,8 @@ package DAO;
 
 import model.User;
 import org.hibernate.*;
-import org.hibernate.criterion.Restrictions;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class UserDaoHibernateImpl implements UserDao {
@@ -40,15 +40,20 @@ public class UserDaoHibernateImpl implements UserDao {
     }
 
     @Override
-    public User get(String email) {
+    public User get(String email) throws SQLException {
 
         Session session = sessionFactory.openSession();
-        // TODO не использовать критерии
-        Criteria criteria = session.createCriteria(User.class);
+
+        Query query = session.createQuery("FROM User where email = :email");
+        query.setParameter("email", email);
+
+        User user = (User) query.uniqueResult();
+
+       /* Criteria criteria = session.createCriteria(User.class);
 
         User user = (User) criteria
                 .add(Restrictions.eq("email", email))
-                .uniqueResult();
+                .uniqueResult();*/
 
         session.close();
 
@@ -59,55 +64,81 @@ public class UserDaoHibernateImpl implements UserDao {
     public boolean add(String email, String password, String name, int age) {
 
         User newUser = new User(email, password, name, age);
+
         Session session = sessionFactory.openSession();
-        Transaction transaction = session.beginTransaction();
+        Transaction transaction = null;
 
-        session.save(newUser);
+        try {
+            transaction = session.beginTransaction();
+            session.save(newUser);
+            transaction.commit();
+        } catch (Exception e) {
 
-        // TODO сделать try-блок с rollback
-        transaction.commit();
-        boolean isAdded = transaction.wasCommitted();
-        session.close();
+            if (transaction != null) {
+                transaction.rollback();
+                throw e;
+            }
+        }  finally {
+            session.close();
+        }
 
-        return isAdded;
+        return true;
     }
 
     @Override
     public boolean update(long id, String email, String password, String name, int age) {
 
         Session session = sessionFactory.openSession();
-        Transaction transaction = session.beginTransaction();
+        Transaction transaction = null;
 
-        User user = (User) session.load(User.class, id);
-        user.setEmail(email);
-        user.setPassword(password);
-        user.setName(name);
-        user.setAge(age);
+        try {
+            transaction = session.beginTransaction();
 
-        session.update(user);
+            User user = (User) session.load(User.class, id);
+            user.setEmail(email);
+            user.setPassword(password);
+            user.setName(name);
+            user.setAge(age);
 
-        transaction.commit();
-        boolean isUpdated = transaction.wasCommitted();
-        session.close();
+            session.update(user);
 
-        return isUpdated;
+            transaction.commit();
+        } catch (Exception e) {
+
+            if (transaction != null) {
+                transaction.rollback();
+                throw e;
+            }
+        }  finally {
+            session.close();
+        }
+
+        return true;
     }
 
-    // TODO пробрасывать исключение и обрабатывать в сервисе
     @Override
     public boolean delete(long id) {
 
         Session session = sessionFactory.openSession();
         User user = (User) session.load(User.class, id);
-        Transaction transaction = session.beginTransaction();
 
-        session.delete(user);
+        Transaction transaction = null;
 
-        transaction.commit();
-        boolean isDeleted = transaction.wasCommitted();
-        session.close();
+        try {
+            transaction = session.beginTransaction();
+            session.delete(user);
+            transaction.commit();
+        } catch (Exception e) {
 
-        return isDeleted;
+            if (transaction != null) {
+                transaction.rollback();
+                throw e;
+            }
+        }  finally {
+            session.close();
+        }
+
+        return true;
     }
 
     // Задано в properties

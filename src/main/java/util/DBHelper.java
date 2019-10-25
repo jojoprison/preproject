@@ -1,7 +1,10 @@
 package util;
 
 import model.User;
+import org.hibernate.SessionFactory;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.service.ServiceRegistry;
 
 import java.sql.Connection;
 import java.sql.Driver;
@@ -12,9 +15,9 @@ import java.util.Properties;
 public class DBHelper {
 
     private static DBHelper dbHelper;
-    private Properties properties;
     private Configuration configuration;
     private Connection connection;
+    private SessionFactory sessionFactory;
 
     private DBHelper() { }
 
@@ -31,17 +34,15 @@ public class DBHelper {
 
             try {
 
-                properties = DaoProperties.getProperties();
-                DriverManager.registerDriver((Driver) Class.forName(properties.getProperty("driver_class")).newInstance());
+                DriverManager.registerDriver((Driver) Class.forName(PropertyReader.getDriverClass()).newInstance());
 
-                // TODO использовать существующие методы для установок конфигурации
-                String url = properties.getProperty("url") +
-                        "?user=" +
-                        properties.getProperty("username") +
-                        "&password=" +
-                        properties.getProperty("password");
+                String url = PropertyReader.getUrl();
 
-                connection = DriverManager.getConnection(url);
+                Properties properties = new Properties();
+                properties.setProperty("user", PropertyReader.getUser());
+                properties.setProperty("password",PropertyReader.getPassword());
+
+                connection = DriverManager.getConnection(url, properties);
 
             } catch (SQLException | InstantiationException | IllegalAccessException | ClassNotFoundException e) {
                 e.printStackTrace();
@@ -54,7 +55,7 @@ public class DBHelper {
 
     public Configuration getConfiguration() {
 
-        properties = DaoProperties.getProperties();
+        Properties properties = PropertyReader.getProperties();
 
         if (configuration == null) {
 
@@ -71,5 +72,18 @@ public class DBHelper {
         }
 
         return configuration;
+    }
+
+    public SessionFactory getSessionFactory() {
+
+        if (sessionFactory == null) {
+            Configuration configuration = getConfiguration();
+            StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder();
+            builder.applySettings(configuration.getProperties());
+            ServiceRegistry serviceRegistry = builder.build();
+            sessionFactory =  configuration.buildSessionFactory(serviceRegistry);
+        }
+
+        return sessionFactory;
     }
 }

@@ -1,9 +1,10 @@
 package service;
 
 import DAO.UserDao;
+import factory.UserDaoFactory;
 import model.User;
-import util.DaoProperties;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class UserService implements Service {
@@ -20,7 +21,7 @@ public class UserService implements Service {
             userService = new UserService();
         }
 
-        userDao = DaoProperties.getUserDaoFactory().getUserDao();
+        userDao = UserDaoFactory.getUserDao();
 
         return userService;
     }
@@ -36,8 +37,14 @@ public class UserService implements Service {
     }
 
     @Override
-    public User get(String email) {
-        return userDao.get(email);
+    public User get(String email) throws SQLException {
+
+        try {
+            return userDao.get(email);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw e;
+        }
     }
 
     @Override
@@ -45,8 +52,12 @@ public class UserService implements Service {
 
         String email = user.getEmail();
 
-        if (userDao.get(email) == null) {
-            return userDao.add(email, user.getPassword(), user.getName(), user.getAge());
+        try {
+            if (userDao.get(email) == null) {
+                return userDao.add(email, user.getPassword(), user.getName(), user.getAge());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
         return false;
@@ -54,13 +65,19 @@ public class UserService implements Service {
 
     @Override
     public boolean update(User user) {
-        // TODO Можно сделать проверки с помощью user.equals(), если понадобится
         return userDao.update(user.getId(), user.getEmail(), user.getPassword(), user.getName(), user.getAge());
     }
 
     @Override
     public boolean delete(long id) {
-        return userDao.delete(id);
+
+        try {
+            return userDao.delete(id);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return false;
     }
 
     @Override

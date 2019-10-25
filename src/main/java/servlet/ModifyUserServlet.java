@@ -32,7 +32,6 @@ public class ModifyUserServlet extends HttpServlet {
         User user = new User(email, password, name, age);
         UserService userService = UserService.getInstance();
 
-        // TODO можно разделить на отдельные сервлеты
         if (idString != null) {
             user.setId(Long.valueOf(idString));
             userService.update(user);

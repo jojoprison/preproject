@@ -17,6 +17,7 @@ public class UpdateUserServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         // TODO setParameter без сессии
+        
         HttpSession session = req.getSession(false);
         session.setAttribute("user", UserService.getInstance().get(Long.parseLong(req.getParameter("id"))));
         resp.sendRedirect(req.getContextPath() + "/user_modify.jsp");

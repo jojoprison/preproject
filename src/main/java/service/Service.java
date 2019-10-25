@@ -2,6 +2,7 @@ package service;
 
 import model.User;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public interface Service {
@@ -10,7 +11,7 @@ public interface Service {
 
     User get(long id);
 
-    User get(String email);
+    User get(String email) throws SQLException;
 
     boolean add(User user);
 

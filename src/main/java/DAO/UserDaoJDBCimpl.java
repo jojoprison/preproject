@@ -65,27 +65,23 @@ public class UserDaoJDBCimpl implements UserDao {
         return user;
     }
 
-    // TODO прокинуть исключения дальше
-    public User get(String email) {
+    public User get(String email) throws SQLException {
 
         User user = null;
         String select = "SELECT * FROM users WHERE email = ?";
 
-        try (PreparedStatement stmt = connection.prepareStatement(select)) {
-            stmt.setString(1, email);
+        PreparedStatement stmt = connection.prepareStatement(select);
+        stmt.setString(1, email);
 
-            ResultSet result = stmt.executeQuery();
+        ResultSet result = stmt.executeQuery();
 
-            if (result.next()) {
-                long id = result.getLong("id");
-                String password = result.getString("password");
-                String name = result.getString("name");
-                int age = result.getInt("age");
+        if (result.next()) {
+            long id = result.getLong("id");
+            String password = result.getString("password");
+            String name = result.getString("name");
+            int age = result.getInt("age");
 
-                user = new User(id, email, password, name, age);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
+            user = new User(id, email, password, name, age);
         }
 
         return user;

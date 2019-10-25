@@ -6,7 +6,50 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a6b8dc5-0a8b-4f64-899c-436b6ab35cd1" name="Default Changelist" comment="" />
+    <list default="true" id="9a6b8dc5-0a8b-4f64-899c-436b6ab35cd1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/servlet/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/91de3d35-17d0-4744-8e1f-4bc0363c7260.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/91de3d35-17d0-4744-8e1f-4bc0363c7260.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preproject.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/UserDaoHibernateImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/UserDaoHibernateImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/UserDaoJDBCimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/UserDaoJDBCimpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/factory/UserDaoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/factory/UserDaoFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/factory/UserDaoFactoryHibernate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/factory/UserDaoFactoryJDBC.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/DeleteUserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/DeleteUserServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/ModifyUserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/ModifyUserServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/UpdateUserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/UpdateUserServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/DBHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/DBHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/DaoProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/PropertyReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/UserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/UserDaoHibernateImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/UserDaoHibernateImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/UserDaoJDBCimpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/UserDaoJDBCimpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/preproject.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/factory/UserDaoFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/factory/UserDaoFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/factory/UserDaoFactoryHibernate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/factory/UserDaoFactoryJDBC.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/service/Service.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/Service.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/servlet/ModifyUserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/servlet/ModifyUserServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/servlet/UpdateUserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/servlet/UpdateUserServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/util/DBHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/util/DBHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/util/DaoProperties.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/classes/DAO/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/classes/DAO/UserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/classes/DAO/UserDaoHibernateImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/classes/DAO/UserDaoHibernateImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/classes/DAO/UserDaoJDBCimpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/classes/DAO/UserDaoJDBCimpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/classes/factory/UserDaoFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/classes/factory/UserDaoFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/classes/service/Service.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/classes/service/Service.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/classes/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/classes/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/classes/servlet/ModifyUserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/classes/servlet/ModifyUserServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/classes/servlet/UpdateUserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/classes/servlet/UpdateUserServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/classes/util/DBHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/classes/util/DBHelper.class" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,10 +101,13 @@
       <list>
         <option value="HTML File" />
         <option value="Jsp File" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -81,6 +127,7 @@
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -297,10 +344,32 @@
       <workItem from="1570610066594" duration="16347000" />
       <workItem from="1570687868810" duration="12502000" />
       <workItem from="1570718674730" duration="2179000" />
+      <workItem from="1570951892657" duration="194000" />
+      <workItem from="1571033715503" duration="22000" />
+      <workItem from="1571308351663" duration="9382000" />
+      <workItem from="1571384921348" duration="603000" />
+      <workItem from="1571579253321" duration="154000" />
+      <workItem from="1571638502138" duration="165000" />
+      <workItem from="1571918304788" duration="4759000" />
+      <workItem from="1571985607928" duration="323000" />
+      <workItem from="1571986257813" duration="2488000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
