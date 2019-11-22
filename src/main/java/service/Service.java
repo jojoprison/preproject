@@ -9,15 +9,17 @@ public interface Service {
 
     List<User> getAll();
 
-    User get(long id);
+    User getById(long id);
 
-    User get(String email) throws SQLException;
+    User getByEmail(String email) throws SQLException;
 
     boolean add(User user);
 
     boolean update(User user);
 
     boolean delete(long id);
+
+    boolean validate(String email,  String password);
 
     void createTable();
 

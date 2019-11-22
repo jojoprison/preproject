@@ -8,16 +8,15 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet("/modify")
+@WebServlet("/admin/modify")
 public class ModifyUserServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getSession(false).removeAttribute("user");
-        resp.sendRedirect(req.getContextPath() + "user_modify.jsp");
+        req.getSession(false).removeAttribute("newUser");
+        resp.sendRedirect("user_modify.jsp");
     }
 
     @Override
@@ -28,8 +27,9 @@ public class ModifyUserServlet extends HttpServlet {
         String password = req.getParameter("password");
         String name = req.getParameter("name");
         Integer age = Integer.valueOf(req.getParameter("age"));
+        String role = req.getParameter("role");
 
-        User user = new User(email, password, name, age);
+        User user = new User(email, password, name, age, role);
         UserService userService = UserService.getInstance();
 
         if (idString != null) {
@@ -39,7 +39,7 @@ public class ModifyUserServlet extends HttpServlet {
             userService.add(user);
         }
 
-        req.getSession(false).removeAttribute("user");
-        resp.sendRedirect(req.getContextPath() + "/index.jsp");
+        req.getSession(false).removeAttribute("newUser");
+        resp.sendRedirect("/admin");
     }
 }

@@ -3,7 +3,6 @@ package DAO;
 import model.User;
 import org.hibernate.*;
 
-import java.sql.SQLException;
 import java.util.List;
 
 public class UserDaoHibernateImpl implements UserDao {
@@ -28,7 +27,7 @@ public class UserDaoHibernateImpl implements UserDao {
     }
 
     @Override
-    public User get(long id) {
+    public User getById(long id) {
 
         Session session = sessionFactory.openSession();
 
@@ -40,20 +39,14 @@ public class UserDaoHibernateImpl implements UserDao {
     }
 
     @Override
-    public User get(String email) throws SQLException {
+    public User getByEmail(String email) {
 
         Session session = sessionFactory.openSession();
 
-        Query query = session.createQuery("FROM User where email = :email");
+        Query query = session.createQuery("FROM User WHERE email = :email");
         query.setParameter("email", email);
 
         User user = (User) query.uniqueResult();
-
-       /* Criteria criteria = session.createCriteria(User.class);
-
-        User user = (User) criteria
-                .add(Restrictions.eq("email", email))
-                .uniqueResult();*/
 
         session.close();
 
@@ -61,16 +54,14 @@ public class UserDaoHibernateImpl implements UserDao {
     }
 
     @Override
-    public boolean add(String email, String password, String name, int age) {
-
-        User newUser = new User(email, password, name, age);
+    public boolean add(User user) {
 
         Session session = sessionFactory.openSession();
         Transaction transaction = null;
 
         try {
             transaction = session.beginTransaction();
-            session.save(newUser);
+            session.save(user);
             transaction.commit();
         } catch (Exception e) {
 
@@ -86,19 +77,13 @@ public class UserDaoHibernateImpl implements UserDao {
     }
 
     @Override
-    public boolean update(long id, String email, String password, String name, int age) {
+    public boolean update(User user) {
 
         Session session = sessionFactory.openSession();
         Transaction transaction = null;
 
         try {
             transaction = session.beginTransaction();
-
-            User user = (User) session.load(User.class, id);
-            user.setEmail(email);
-            user.setPassword(password);
-            user.setName(name);
-            user.setAge(age);
 
             session.update(user);
 
@@ -139,6 +124,19 @@ public class UserDaoHibernateImpl implements UserDao {
         }
 
         return true;
+    }
+
+    @Override
+    public boolean validate(String email, String password) {
+        User user = getByEmail(email);
+
+        boolean isValidated = false;
+
+        if (user.getPassword().equals(password)) {
+            isValidated = true;
+        }
+
+        return isValidated;
     }
 
     // Задано в properties

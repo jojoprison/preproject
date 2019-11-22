@@ -9,15 +9,17 @@ public interface UserDao {
 
     List<User> getAll();
 
-    User get(long id);
+    User getById(long id);
 
-    User get(String email) throws SQLException;
+    User getByEmail(String email) throws SQLException;
 
-    boolean add(String email, String password, String name, int age);
+    boolean add(User user);
 
-    boolean update(long id, String email, String password, String name, int age);
+    boolean update(User user);
 
     boolean delete(long id);
+
+    boolean validate(String email,  String password);
 
     void createTable();
 

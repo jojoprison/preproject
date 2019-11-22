@@ -17,6 +17,7 @@
         <th>Password</th>
         <th>Name</th>
         <th>Age</th>
+        <th>Role</th>
         <th>Update</th>
         <th>Delete</th>
     </tr>
@@ -29,14 +30,15 @@
             <td><c:out value="${user.password}"/></td>
             <td><c:out value="${user.name}"/></td>
             <td><c:out value="${user.age}"/></td>
+            <td><c:out value="${user.role}"/></td>
             <td align="center">
-                <form method="post" action="update">
+                <form method="post" action="admin/update">
                     <input type="submit" value="Update" name="update">
                     <input type="hidden" name="id" value="${user.id}">
                 </form>
             </td>
             <td align="center">
-                <form method="post" action="delete">
+                <form method="post" action="admin/delete">
                     <input type="submit" value="Delete" name="delete">
                     <input type="hidden" name="id" value="${user.id}">
                 </form>
@@ -48,8 +50,18 @@
 </table>
 <br/>
 
-<form action="modify" align="center">
+<form action="admin/modify" align="center">
     <button>Add User</button>
+</form>
+<br/>
+
+<div align="center">
+    <a href="user">Visit Login Page</a>
+</div>
+<br/>
+
+<form action="logout" method="POST" align="center">
+    <input type="submit" value="Logout">
 </form>
 
 </body>

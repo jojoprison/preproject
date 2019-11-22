@@ -32,15 +32,15 @@ public class UserService implements Service {
     }
 
     @Override
-    public User get(long id) {
-        return userDao.get(id);
+    public User getById(long id) {
+        return userDao.getById(id);
     }
 
     @Override
-    public User get(String email) throws SQLException {
+    public User getByEmail(String email) throws SQLException {
 
         try {
-            return userDao.get(email);
+            return userDao.getByEmail(email);
         } catch (SQLException e) {
             e.printStackTrace();
             throw e;
@@ -53,8 +53,8 @@ public class UserService implements Service {
         String email = user.getEmail();
 
         try {
-            if (userDao.get(email) == null) {
-                return userDao.add(email, user.getPassword(), user.getName(), user.getAge());
+            if (userDao.getByEmail(email) == null) {
+                return userDao.add(user);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -65,7 +65,7 @@ public class UserService implements Service {
 
     @Override
     public boolean update(User user) {
-        return userDao.update(user.getId(), user.getEmail(), user.getPassword(), user.getName(), user.getAge());
+        return userDao.update(user);
     }
 
     @Override
@@ -78,6 +78,12 @@ public class UserService implements Service {
         }
 
         return false;
+    }
+
+    @Override
+    public boolean validate(String email, String password) {
+
+        return userDao.validate(email, password);
     }
 
     @Override

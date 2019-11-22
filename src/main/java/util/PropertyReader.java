@@ -6,32 +6,52 @@ import java.util.Properties;
 
 public class PropertyReader {
 
-    public static Properties getProperties() {
+    private static PropertyReader propertyReader;
+    private static Properties properties;
 
-        Properties properties = new Properties();
+    private PropertyReader() { }
 
-        try (InputStream inputStream = PropertyReader.class.getClassLoader().getResourceAsStream("dao.properties")) {
-            properties.load(inputStream);
-        } catch (IOException e) {
-            e.printStackTrace();
+    public static PropertyReader getInstance() {
+
+        if (propertyReader == null) {
+            propertyReader = new PropertyReader();
+
+            if (properties == null) {
+
+                properties = new Properties();
+
+                try (InputStream inputStream = PropertyReader.class.getClassLoader().getResourceAsStream("dao.properties")) {
+                    properties.load(inputStream);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
+        return propertyReader;
+    }
+
+    public Properties getProperties() {
 
         return properties;
     }
 
-    public static String getUrl() {
-        return getProperties().getProperty("url");
+    public String getProperty(String property) {
+        return properties.getProperty(property);
     }
 
-    public static String getDriverClass() {
-        return getProperties().getProperty("driver_class");
+    public String getUrl() {
+        return getProperty("url");
     }
 
-    public static String getUser() {
-        return getProperties().getProperty("username");
+    public String getDriverClass() {
+        return getProperty("driver_class");
     }
 
-    public static String getPassword() {
-        return getProperties().getProperty("password");
+    public String getUsername() {
+        return getProperty("username");
+    }
+
+    public String getPassword() {
+        return getProperty("password");
     }
 }

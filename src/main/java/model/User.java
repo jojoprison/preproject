@@ -29,19 +29,21 @@ public class User {
 
     public User() { }
 
-    public User(String email, String password, String name, Integer age) {
+    public User(String email, String password, String name, Integer age, String role) {
         this.email = email;
         this.password = password;
         this.name = name;
         this.age = age;
+        this.role = role;
     }
 
-    public User(Long id, String email, String password, String name, Integer age) {
+    public User(Long id, String email, String password, String name, Integer age, String role) {
         this.id = id;
         this.email = email;
         this.password = password;
         this.name = name;
         this.age = age;
+        this.role = role;
     }
 
     public Long getId() {
@@ -82,6 +84,14 @@ public class User {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     @Override

@@ -30,8 +30,9 @@ public class UserDaoJDBCimpl implements UserDao {
                 String password = result.getString("password");
                 String name = result.getString("name");
                 int age = result.getInt("age");
+                String role = result.getString("role");
 
-                userList.add(new User(id, email, password, name, age));
+                userList.add(new User(id, email, password, name, age, role));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -40,12 +41,13 @@ public class UserDaoJDBCimpl implements UserDao {
         return userList;
     }
 
-    public User get(long id) {
+    public User getById(long id) {
 
-        User user = null;
         String select = "SELECT * FROM users WHERE id = ?";
+        User user = null;
 
         try (PreparedStatement stmt = connection.prepareStatement(select)) {
+
             stmt.setLong(1, id);
 
             ResultSet result = stmt.executeQuery();
@@ -55,8 +57,9 @@ public class UserDaoJDBCimpl implements UserDao {
                 String password = result.getString("password");
                 String name = result.getString("name");
                 int age = result.getInt("age");
+                String role = result.getString("role");
 
-                user = new User(id, email, password, name, age);
+                user = new User(id, email, password, name, age, role);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -65,37 +68,40 @@ public class UserDaoJDBCimpl implements UserDao {
         return user;
     }
 
-    public User get(String email) throws SQLException {
+    public User getByEmail(String email) throws SQLException {
 
-        User user = null;
         String select = "SELECT * FROM users WHERE email = ?";
 
         PreparedStatement stmt = connection.prepareStatement(select);
         stmt.setString(1, email);
 
         ResultSet result = stmt.executeQuery();
+        User user = null;
 
         if (result.next()) {
             long id = result.getLong("id");
             String password = result.getString("password");
             String name = result.getString("name");
             int age = result.getInt("age");
+            String role = result.getString("role");
 
-            user = new User(id, email, password, name, age);
+            user = new User(id, email, password, name, age, role);
         }
 
         return user;
     }
 
-    public boolean add(String email, String password, String name, int age) {
+    public boolean add(User user) {
 
-        String insert = "INSERT INTO users(email, password, name, age) VALUES (?, ?, ?, ?)";
+        String insert = "INSERT INTO users(email, password, name, age, role) VALUES (?, ?, ?, ?, ?)";
 
         try (PreparedStatement stmt = connection.prepareStatement(insert)) {
-            stmt.setString(1, email);
-            stmt.setString(2, password);
-            stmt.setString(3, name);
-            stmt.setInt(4, age);
+
+            stmt.setString(1, user.getEmail());
+            stmt.setString(2, user.getPassword());
+            stmt.setString(3, user.getName());
+            stmt.setInt(4, user.getAge());
+            stmt.setString(5, user.getRole());
 
             return stmt.executeUpdate() > 0;
         } catch (SQLException e) {
@@ -104,17 +110,18 @@ public class UserDaoJDBCimpl implements UserDao {
         }
     }
 
-    public boolean update(long id, String email, String password, String name, int age) {
+    public boolean update(User user) {
 
-        String update = "UPDATE users SET email = ?, password = ?, name = ?, age = ? WHERE id = ?";
+        String update = "UPDATE users SET email = ?, password = ?, name = ?, age = ?, role = ? WHERE id = ?";
 
         try (PreparedStatement stmt = connection.prepareStatement(update)) {
 
-            stmt.setLong(5, id);
-            stmt.setString(1, email);
-            stmt.setString(2, password);
-            stmt.setString(3, name);
-            stmt.setInt(4, age);
+            stmt.setLong(6, user.getId());
+            stmt.setString(1, user.getEmail());
+            stmt.setString(2, user.getPassword());
+            stmt.setString(3, user.getName());
+            stmt.setInt(4, user.getAge());
+            stmt.setString(5, user.getRole());
 
             return stmt.executeUpdate() > 0;
         } catch (SQLException e) {
@@ -135,6 +142,33 @@ public class UserDaoJDBCimpl implements UserDao {
             e.printStackTrace();
             return false;
         }
+    }
+
+    @Override
+    public boolean validate(String email, String password) {
+
+        boolean isValidated = false;
+        String select = "SELECT * FROM users WHERE email = ?";
+
+        try (PreparedStatement stmt = connection.prepareStatement(select)) {
+
+            stmt.setString(1, email);
+
+            ResultSet result = stmt.executeQuery();
+
+            if (result.next()) {
+
+                String dbPassword = result.getString("password");
+
+                if (password.equals(dbPassword)) {
+                    isValidated = true;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return isValidated;
     }
 
     public void createTable() {

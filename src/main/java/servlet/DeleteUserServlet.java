@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/delete")
+@WebServlet("/admin/delete")
 public class DeleteUserServlet extends HttpServlet {
 
     @Override
@@ -17,7 +17,6 @@ public class DeleteUserServlet extends HttpServlet {
 
         UserService userService = UserService.getInstance();
         userService.delete(Long.parseLong(req.getParameter("id")));
-        req.setAttribute("users", userService.getAll());
-        req.getRequestDispatcher("users.jsp").forward(req, resp);
+        resp.sendRedirect("/admin");
     }
 }

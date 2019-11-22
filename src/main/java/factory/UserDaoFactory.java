@@ -10,7 +10,7 @@ public class UserDaoFactory {
 
     public static UserDao getUserDao() {
 
-        String dbName = PropertyReader.getProperties().getProperty("db_name");
+        String dbName = PropertyReader.getInstance().getProperty("db_name");
         UserDao userDao = null;
 
         switch (dbName.toLowerCase()) {

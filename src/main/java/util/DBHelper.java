@@ -34,13 +34,15 @@ public class DBHelper {
 
             try {
 
-                DriverManager.registerDriver((Driver) Class.forName(PropertyReader.getDriverClass()).newInstance());
+                PropertyReader propertyReader = PropertyReader.getInstance();
 
-                String url = PropertyReader.getUrl();
+                DriverManager.registerDriver((Driver) Class.forName(propertyReader.getDriverClass()).newInstance());
+
+                String url = propertyReader.getUrl();
 
                 Properties properties = new Properties();
-                properties.setProperty("user", PropertyReader.getUser());
-                properties.setProperty("password",PropertyReader.getPassword());
+                properties.setProperty("user", propertyReader.getUsername());
+                properties.setProperty("password",propertyReader.getPassword());
 
                 connection = DriverManager.getConnection(url, properties);
 
@@ -55,20 +57,20 @@ public class DBHelper {
 
     public Configuration getConfiguration() {
 
-        Properties properties = PropertyReader.getProperties();
+        PropertyReader propertyReader = PropertyReader.getInstance();
 
         if (configuration == null) {
 
             configuration = new Configuration();
             configuration.addAnnotatedClass(User.class);
 
-            configuration.setProperty("hibernate.dialect", properties.getProperty("dialect"));
-            configuration.setProperty("hibernate.connection.driver_class", properties.getProperty("driver_class"));
-            configuration.setProperty("hibernate.connection.url", properties.getProperty("url"));
-            configuration.setProperty("hibernate.connection.username", properties.getProperty("username"));
-            configuration.setProperty("hibernate.connection.password", properties.getProperty("password"));
-            configuration.setProperty("hibernate.show_sql", properties.getProperty("show_sql"));
-            configuration.setProperty("hibernate.hbm2ddl.auto", properties.getProperty("hbm2ddl.auto"));
+            configuration.setProperty("hibernate.dialect", propertyReader.getProperty("dialect"));
+            configuration.setProperty("hibernate.connection.driver_class", propertyReader.getDriverClass());
+            configuration.setProperty("hibernate.connection.url", propertyReader.getUrl());
+            configuration.setProperty("hibernate.connection.username", propertyReader.getUsername());
+            configuration.setProperty("hibernate.connection.password", propertyReader.getPassword());
+            configuration.setProperty("hibernate.show_sql", propertyReader.getProperty("show_sql"));
+            configuration.setProperty("hibernate.hbm2ddl.auto", propertyReader.getProperty("hbm2ddl.auto"));
         }
 
         return configuration;

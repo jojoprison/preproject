@@ -10,16 +10,14 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet("/update")
+@WebServlet("/admin/update")
 public class UpdateUserServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        // TODO setParameter без сессии
-        
         HttpSession session = req.getSession(false);
-        session.setAttribute("user", UserService.getInstance().get(Long.parseLong(req.getParameter("id"))));
-        resp.sendRedirect(req.getContextPath() + "/user_modify.jsp");
+        session.setAttribute("newUser", UserService.getInstance().getById(Long.parseLong(req.getParameter("id"))));
+        resp.sendRedirect("user_modify.jsp");
     }
 }
