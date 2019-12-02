@@ -1,6 +1,6 @@
 package filter;
 
-import model.User;
+import crud.model.User;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
@@ -19,12 +19,13 @@ public class UserFilter implements Filter {
 
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse res = (HttpServletResponse) response;
-        User user = (User) req.getSession(false).getAttribute("user");
+        User user = (User) req.getSession(false).getAttribute("userAuth");
 
-        if (!(user.getRole().equals("user") || user.getRole().equals("admin"))) {
-            res.sendRedirect("/error_access.jsp");
+        System.out.println("USER: " + user);
+
+        if (user == null || !(user.getRole().equals("user") || user.getRole().equals("admin"))) {
+            res.sendRedirect("/error");
         } else {
-            // pass the request along the filter chain
             chain.doFilter(request, response);
         }
     }

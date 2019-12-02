@@ -1,6 +1,6 @@
 package filter;
 
-import model.User;
+import crud.model.User;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
@@ -19,10 +19,13 @@ public class AdminFilter implements Filter {
 
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse res = (HttpServletResponse) response;
-        User user = (User) req.getSession(false).getAttribute("user");
 
-        if (!user.getRole().equals("admin")) {
-            res.sendRedirect("/error_access.jsp");
+        User user = (User) req.getSession(false).getAttribute("userAuth");
+
+        System.out.println("ADMIN: " + user);
+
+        if (user == null || !user.getRole().equals("admin")) {
+            res.sendRedirect("/error");
         } else {
             // pass the request along the filter chain
             chain.doFilter(request, response);

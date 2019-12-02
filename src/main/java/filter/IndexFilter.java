@@ -22,10 +22,14 @@ public class IndexFilter implements Filter {
 
         String uri = req.getRequestURI();
 
+        System.out.println(uri);
+
         HttpSession session = req.getSession(false);
 
+        System.out.println(session);
+
         if (session == null && !(uri.endsWith("index.jsp") || uri.endsWith("login"))) {
-            res.sendRedirect("/index.jsp");
+            res.sendRedirect("/login");
         } else {
             // pass the request along the filter chain
             chain.doFilter(request, response);
