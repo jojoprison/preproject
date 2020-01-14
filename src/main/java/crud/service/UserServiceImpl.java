@@ -3,49 +3,75 @@ package crud.service;
 import crud.dao.UserDao;
 import crud.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@org.springframework.stereotype.Service
+@Service("userService")
 @Transactional
 public class UserServiceImpl implements UserService {
 
     @Autowired
-    private UserDao userDao;
+    private UserDao dao;
 
-    @Override
-    public List<User> getAllUsers() {
-        return userDao.getAllUsers();
-    }
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @Override
     public User getById(long id) {
-        return userDao.getById(id);
+        return dao.getById(id);
     }
 
     @Override
-    public User getByEmail(String email) {
-        return userDao.getByEmail(email);
+    public User getBySSO(String SSO) {
+        return dao.getBySSO(SSO);
+    }
+
+    @Override
+    public List<User> getAll() {
+        return dao.getAll();
     }
 
     @Override
     public void add(User user) {
-        userDao.add(user);
+
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+
+        dao.add(user);
     }
 
     @Override
     public void update(User user) {
-        userDao.update(user);
+
+        User dbUser = dao.getById(user.getId());
+
+        if (dbUser != null) {
+
+            dbUser.setSsoId(user.getSsoId());
+
+            if (!user.getPassword().equals(dbUser.getPassword())) {
+                dbUser.setPassword(passwordEncoder.encode(user.getPassword()));
+            }
+
+            dbUser.setEmail(user.getEmail());
+            dbUser.setName(user.getName());
+            dbUser.setAge(user.getAge());
+            dbUser.setUserProfiles(user.getUserProfiles());
+        }
     }
 
     @Override
-    public void delete(User user) {
-        userDao.delete(user);
+    public void deleteBySSO(String SSO) {
+        dao.deleteBySSO(SSO);
     }
 
     @Override
-    public boolean validate(String email, String password) {
-        return userDao.validate(email, password);
+    public boolean isSSOUnique(Long id, String SSO) {
+
+        User user = getBySSO(SSO);
+
+        return (user == null || ((user.getId().equals(id))));
     }
 }

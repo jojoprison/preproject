@@ -1,19 +1,46 @@
 package crud.controller;
 
+import crud.model.User;
+import crud.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
+
+import java.util.List;
 
 @Controller
+@RequestMapping("/user")
 public class UserController {
 
-    @RequestMapping(value = "/user", method = RequestMethod.GET)
-    public ModelAndView userLogin() {
+    @Autowired
+    private UserService userService;
 
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("login_success");
+    @GetMapping(value = {"/", "/list"})
+    public String listUsers(ModelMap model) {
 
-        return modelAndView;
+        List<User> users = userService.getAll();
+
+        model.addAttribute("users", users);
+        model.addAttribute("logged_in_user", getPrincipal());
+
+        return "user_list";
+    }
+
+    protected static String getPrincipal() {
+
+        String userName;
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+        if (principal instanceof UserDetails) {
+            userName = ((UserDetails) principal).getUsername();
+        } else {
+            userName = principal.toString();
+        }
+
+        return userName;
     }
 }

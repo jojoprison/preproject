@@ -1,81 +1,59 @@
 package crud.controller;
 
-import crud.model.User;
-import crud.service.UserService;
+import crud.service.UserProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationTrustResolver;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.authentication.rememberme.PersistentTokenBasedRememberMeServices;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import org.springframework.web.servlet.view.RedirectView;
 
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 @Controller
-@SessionAttributes("user")
+@RequestMapping("/")
 public class LoginController {
 
     @Autowired
-    private UserService userService;
+    UserProfileService userProfileService;
 
-    @RequestMapping(value = {"/", "/login"}, method = RequestMethod.GET)
-    public ModelAndView getIndex(ModelAndView modelAndView) {
+    @Autowired
+    PersistentTokenBasedRememberMeServices persistentTokenBasedRememberMeServices;
 
-        modelAndView.setViewName("index");
+    @Autowired
+    AuthenticationTrustResolver authenticationTrustResolver;
 
-        System.out.println(modelAndView.getModel());
+    @GetMapping(value = {"/", "/login"})
+    public String login() {
 
-        return modelAndView;
-    }
-
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public ModelAndView login(HttpSession session,
-                              @RequestParam("email") String email,
-                              @RequestParam("password") String password,
-                              RedirectAttributes redirectAttributes) {
-
-        ModelAndView modelAndView = new ModelAndView();
-
-        if (userService.validate(email, password)) {
-
-            User user = userService.getByEmail(email);
-
-            session.setAttribute("userAuth", user);
-            session.setMaxInactiveInterval(10 * 60);
-
-            if (user.getRole().equals("admin")) {
-                modelAndView.setViewName("redirect:/admin");
-            } else {
-                modelAndView.setViewName("redirect:/user");
-            }
+        if (isCurrentAuthenticationAnonymous()) {
+            return "login";
         } else {
-            modelAndView.setViewName("redirect:/");
-            // из-за редиректа передаем флеш-аттрибут
-            redirectAttributes.addFlashAttribute("message", "Either e-mail or password is wrong.");
-//            modelAndView.addObject("message", "Either e-mail or password is wrong.");
+            return "redirect:/user/list";
         }
-
-        return modelAndView;
     }
 
-    @RequestMapping(value = "/logout", method = RequestMethod.POST)
-    public ModelAndView logout(HttpSession session) {
+    @GetMapping(value = "/logout")
+    public String logoutPage(HttpServletRequest request, HttpServletResponse response) {
 
-        ModelAndView modelAndView = new ModelAndView();
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
-        User user = (User) session.getAttribute("userAuth");
+        if (auth != null) {
+            persistentTokenBasedRememberMeServices.logout(request, response, auth);
 
-        if (user != null) {
-            System.out.println("User {" + user.getEmail() + ", " + user.getRole() + "} logout.");
+            SecurityContextHolder.getContext().setAuthentication(null);
         }
 
-        session.invalidate();
+        return "redirect:/login";
+    }
 
-        modelAndView.setViewName("redirect:/");
+    private boolean isCurrentAuthenticationAnonymous() {
 
-        return modelAndView;
+        final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        return authenticationTrustResolver.isAnonymous(authentication);
     }
 }

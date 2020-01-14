@@ -29,9 +29,7 @@ public class AppInitializer extends AbstractAnnotationConfigDispatcherServletIni
         characterEncodingFilter.setEncoding("UTF-8");
         characterEncodingFilter.setForceEncoding(true);
 
-//        IndexFilter indexFilter = new IndexFilter();
-
+        // добавляем фильтры
         return new Filter[]{characterEncodingFilter};
-
     }
 }

@@ -7,130 +7,138 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a6b8dc5-0a8b-4f64-899c-436b6ab35cd1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/preproject.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/crud/config/AppInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/crud/config/HibernateConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/crud/config/WebConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/crud/controller/AdminController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/crud/controller/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/crud/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/crud/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/crud/service/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/squalorDf.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/preproject.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/crud/converter/RoleToUserProfileConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/crud/dao/AbstractDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/crud/dao/HibernateTokenRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/crud/dao/UserProfileDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/crud/dao/UserProfileDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/crud/model/PersistentLogin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/crud/model/UserProfile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/crud/model/UserProfileType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/crud/security/CustomUserDetailsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/crud/security/SecurityConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/crud/security/SecurityWebApplicationInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/crud/service/UserProfileService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/crud/service/UserProfileServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/crud/util/QuickPasswordEncodingGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/messages.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/access_denied.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/auth_header.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/registration.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/registration_success.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user_list.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/91de3d35-17d0-4744-8e1f-4bc0363c7260.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/91de3d35-17d0-4744-8e1f-4bc0363c7260.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/crud/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/UserDaoHibernateImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/crud/dao/UserDaoHibernateImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/UserDaoJDBCimpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/factory/UserDaoFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/filter/AdminFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/filter/AdminFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/filter/IndexFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/filter/IndexFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/filter/UserFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/filter/UserFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lessons/AnotherConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lessons/BeanWithDependency.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lessons/LessonsConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lessons/jdbc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lessons/services/AutowiredClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lessons/services/CommandManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lessons/services/GreetingService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lessons/services/GreetingServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lessons/starter/ResourceStarter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lessons/starter/Starter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lessons/xml-config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/crud/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/Service.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/DeleteUserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/DeleteUserServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/LogoutServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/ModifyUserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/ModifyUserServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/UpdateUserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/UpdateUserServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/UserListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/UserListServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/UserServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/DBHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/PropertyReader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/dao.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dao.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/logging.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/user_modify.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/user_modify.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/users.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/users.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/error_access.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/error_access.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/login_success.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login_success.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/user_info.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user_info.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/UserDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/UserDaoHibernateImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/UserDaoJDBCimpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/preproject.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/factory/UserDaoFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/filter/AdminFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/filter/AdminFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/filter/IndexFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/filter/IndexFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/filter/UserFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/filter/UserFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lessons/AnotherConfiguration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lessons/BeanWithDependency.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lessons/LessonsConfiguration$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lessons/LessonsConfiguration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lessons/services/AutowiredClass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lessons/services/CommandManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lessons/services/GreetingService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lessons/services/GreetingServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lessons/starter/Starter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/service/Service.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/service/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/servlet/DeleteUserServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/servlet/LoginServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/servlet/LogoutServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/servlet/ModifyUserServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/servlet/UpdateUserServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/servlet/UserListServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/servlet/UserServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/util/DBHelper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/util/PropertyReader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/classes/DAO/UserDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/classes/DAO/UserDaoHibernateImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/classes/DAO/UserDaoJDBCimpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/classes/META-INF/preproject.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/classes/dao.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/classes/factory/UserDaoFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/classes/filter/AdminFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/classes/filter/IndexFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/classes/filter/UserFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/classes/logging.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/classes/model/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/classes/service/Service.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/classes/service/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/classes/servlet/DeleteUserServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/classes/servlet/LoginServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/classes/servlet/LogoutServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/classes/servlet/ModifyUserServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/classes/servlet/UpdateUserServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/classes/servlet/UserListServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/classes/servlet/UserServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/classes/util/DBHelper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/classes/util/PropertyReader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/lib/antlr-2.7.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/lib/dom4j-1.6.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/lib/hibernate-commons-annotations-4.0.5.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/lib/hibernate-core-4.3.10.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/lib/hibernate-jpa-2.1-api-1.0.0.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/lib/jandex-1.1.0.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/lib/javassist-3.18.1-GA.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/lib/jboss-logging-3.1.3.GA.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/lib/jboss-logging-annotations-1.2.0.Beta1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/lib/jboss-transaction-api_1.2_spec-1.0.0.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/lib/jstl-1.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/lib/xml-apis-1.0.b2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/admin/user_modify.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/admin/users.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/error_access.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/login_success.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/user_info.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/crud/config/AppInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/crud/config/AppInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/crud/config/HibernateConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/crud/config/HibernateConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/crud/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/crud/config/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/crud/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/crud/controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/crud/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/crud/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/crud/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/crud/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/crud/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/crud/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/crud/dao/UserDaoHibernateImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/crud/dao/UserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/crud/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/crud/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/crud/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/crud/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/crud/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/crud/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/filter/AdminFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/filter/IndexFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/filter/UserFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/DeleteUserServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/LoginServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/LogoutServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/ModifyUserServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/UpdateUserServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/UserListServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/UserServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/user_modify.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/users.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/error_access.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login_success.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user_info.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/crud/config/AppInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/crud/config/AppInitializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/crud/config/HibernateConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/crud/config/HibernateConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/crud/config/WebConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/crud/config/WebConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/crud/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/crud/controller/AdminController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/crud/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/crud/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/crud/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/crud/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/crud/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/crud/dao/UserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/crud/dao/UserDaoHibernateImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/crud/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/crud/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/crud/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/crud/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/crud/service/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/crud/service/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/filter/AdminFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/filter/IndexFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/filter/UserFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/classes/factory/UserDaoFactoryHibernate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/classes/factory/UserDaoFactoryJDBC.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.0/WEB-INF/classes/util/DaoProperties.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.4/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/classes/META-INF/preproject.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/classes/crud/config/AppInitializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/classes/crud/config/HibernateConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/classes/crud/config/WebConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/classes/crud/controller/AdminController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/classes/crud/controller/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/classes/crud/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/classes/crud/dao/UserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/classes/crud/dao/UserDaoHibernateImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/classes/crud/model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/classes/crud/service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/classes/crud/service/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/classes/dao.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/classes/filter/AdminFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/classes/filter/IndexFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/classes/filter/UserFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/lib/FastInfoset-1.2.15.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/lib/antlr-2.7.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/lib/byte-buddy-1.9.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/lib/classmate-1.3.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/lib/dom4j-2.1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/lib/hibernate-commons-annotations-5.1.0.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/lib/hibernate-core-5.4.1.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/lib/istack-commons-runtime-3.0.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/lib/jandex-2.0.5.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/lib/javassist-3.24.0-GA.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/lib/javax.activation-api-1.2.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/lib/javax.persistence-api-2.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/lib/jaxb-api-2.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/lib/jaxb-runtime-2.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/lib/jboss-logging-3.3.2.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/lib/jboss-transaction-api_1.2_spec-1.1.1.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/lib/jstl-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/lib/mysql-connector-java-8.0.14.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/lib/protobuf-java-3.6.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/lib/spring-aop-5.1.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/lib/spring-beans-5.1.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/lib/spring-context-5.1.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/lib/spring-core-5.1.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/lib/spring-expression-5.1.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/lib/spring-jcl-5.1.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/lib/spring-jdbc-5.1.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/lib/spring-orm-5.1.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/lib/spring-tx-5.1.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/lib/spring-web-5.1.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/lib/spring-webmvc-5.1.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/lib/stax-ex-1.8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/lib/tomcat-dbcp-9.0.10.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/lib/tomcat-juli-9.0.10.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/lib/txw2-2.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/pages/admin/user_modify.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/pages/admin/users.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/pages/error_access.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/pages/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/pages/login_success.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/pages/user_info.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject-1.5/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/preproject/META-INF/MANIFEST.MF" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +177,14 @@
         <item name="preproject@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="preproject: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="users: table" type="285a2a93:MysqlImplModel$Table" />
+        <item name="app_user: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="preproject@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="preproject: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="user_profile: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -219,7 +234,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="C:/container_user_project/containers_user" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -239,19 +254,31 @@
       <recent name="crud" />
       <recent name="filter" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Work\Java-Mentor\preproject\src\main\webapp\WEB-INF\pages" />
+      <recent name="C:\Work\Java-Mentor\preproject\src\main\webapp\WEB-INF\pages\admin" />
+      <recent name="C:\Work\Java-Mentor\preproject\src\main\resources" />
+      <recent name="C:\Work\Java-Mentor\preproject\src\main\webapp" />
+      <recent name="C:\Work\Java-Mentor\preproject\src\main\java\crud\security" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="crud.converter" />
+      <recent name="crud.util" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Work\Java-Mentor\preproject\src\main\webapp\WEB-INF\pages" />
+      <recent name="C:\Work\Java-Mentor\preproject\src\main\webapp\WEB-INF\pages\admin" />
       <recent name="C:\Work\Java-Mentor\preproject\src\main\webapp" />
       <recent name="C:\Work\Java-Mentor\preproject\src\main\webapp\admin" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 7.0.96">
-    <configuration name="Starter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="lessons.starter.Starter" />
+    <configuration name="QuickPasswordEncodingGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="crud.util.QuickPasswordEncodingGenerator" />
       <module name="preproject" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="lessons.starter.*" />
+          <option name="PATTERN" value="crud.util.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -331,87 +358,13 @@
         </option>
       </method>
     </configuration>
-    <configuration name="Tomcat 8.5.46" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.46" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
-      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
-      <deployment>
-        <artifact name="preproject:war exploded">
-          <settings>
-            <option name="CONTEXT_PATH" value="/" />
-          </settings>
-        </artifact>
-      </deployment>
-      <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="Unnamed_preproject" />
-      </server-settings>
-      <predefined_log_file enabled="true" id="Tomcat" />
-      <predefined_log_file enabled="true" id="Tomcat Catalina" />
-      <predefined_log_file id="Tomcat Manager" />
-      <predefined_log_file id="Tomcat Host Manager" />
-      <predefined_log_file id="Tomcat Localhost Access" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="55188" />
-      </RunnerSettings>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <method v="2">
-        <option name="Make" enabled="true" />
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="preproject:war exploded" />
-        </option>
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="Application.Starter" />
-      <item itemvalue="Tomcat Server.Tomcat 8.5.46" />
+      <item itemvalue="Application.QuickPasswordEncodingGenerator" />
       <item itemvalue="Tomcat Server.Tomcat 7.0.96" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Starter" />
+        <item itemvalue="Application.QuickPasswordEncodingGenerator" />
       </list>
     </recent_temporary>
   </component>
@@ -419,7 +372,7 @@
     <option name="viewStates">
       <list>
         <serviceView>
-          <option name="contentProportion" value="0.27649006" />
+          <option name="contentProportion" value="0.19453642" />
           <treeState>
             <expand>
               <path>
@@ -429,7 +382,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -502,7 +455,29 @@
       <workItem from="1575016055123" duration="144000" />
       <workItem from="1575016687880" duration="6390000" />
       <workItem from="1575055691893" duration="1151000" />
-      <workItem from="1575111422157" duration="6318000" />
+      <workItem from="1575111422157" duration="8917000" />
+      <workItem from="1575302761302" duration="2408000" />
+      <workItem from="1575353859080" duration="3466000" />
+      <workItem from="1575442905906" duration="21000" />
+      <workItem from="1575536984905" duration="759000" />
+      <workItem from="1575545722618" duration="61000" />
+      <workItem from="1575548488105" duration="166000" />
+      <workItem from="1576680952793" duration="22000" />
+      <workItem from="1576741223774" duration="2709000" />
+      <workItem from="1577342310889" duration="566000" />
+      <workItem from="1577342950695" duration="74000" />
+      <workItem from="1577343049953" duration="2399000" />
+      <workItem from="1577348572185" duration="1640000" />
+      <workItem from="1577434941021" duration="448000" />
+      <workItem from="1577689482270" duration="8481000" />
+      <workItem from="1577782335823" duration="5000" />
+      <workItem from="1577789985019" duration="601000" />
+      <workItem from="1578345336421" duration="469000" />
+      <workItem from="1578551604305" duration="599000" />
+      <workItem from="1578638200676" duration="1198000" />
+      <workItem from="1578848967032" duration="13101000" />
+      <workItem from="1578902564075" duration="5463000" />
+      <workItem from="1579006504616" duration="902000" />
     </task>
     <servers />
   </component>
@@ -523,65 +498,125 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="233" y="0" key="#Assign_Data_Sources" timestamp="1575017651916">
+    <state x="233" y="0" key="#Assign_Data_Sources" timestamp="1577689858910">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="0" key="#Assign_Data_Sources/0.0.1280.680@0.0.1280.680" timestamp="1575017651916" />
+    <state x="233" y="0" key="#Assign_Data_Sources/0.0.1280.680@0.0.1280.680" timestamp="1577689858910" />
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578905408158">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1578905408158" />
+    <state x="446" y="49" key="#com.intellij.ide.util.MemberChooser" timestamp="1578905250010">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="446" y="49" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1578905250010" />
+    <state x="272" y="29" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1577692453502">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="272" y="29" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1280.680@0.0.1280.680" timestamp="1577692453502" />
+    <state x="430" y="246" key="#com.intellij.javaee.module.view.common.J2EE.J2EEDeploymentDescriptorLocationPanel.changeDDPath" timestamp="1577692385576">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="430" y="246" key="#com.intellij.javaee.module.view.common.J2EE.J2EEDeploymentDescriptorLocationPanel.changeDDPath/0.0.1280.680@0.0.1280.680" timestamp="1577692385576" />
     <state x="438" y="225" width="404" height="240" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1575269945740">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="438" y="225" width="404" height="240" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1280.680@0.0.1280.680" timestamp="1575269945740" />
-    <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1575111620961">
+    <state x="222" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1577343935688">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1575111620961" />
-    <state width="873" height="312" key="GridCell.Tab.0.bottom" timestamp="1575276165902">
+    <state x="222" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.680@0.0.1280.680" timestamp="1577343935688" />
+    <state x="371" y="87" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1578900229379">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="873" height="312" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1575276165902" />
-    <state width="873" height="312" key="GridCell.Tab.0.center" timestamp="1575276165902">
+    <state x="371" y="87" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1578900229379" />
+    <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1578916427154">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="873" height="312" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1575276165902" />
-    <state width="873" height="312" key="GridCell.Tab.0.left" timestamp="1575276165902">
+    <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1578916427154" />
+    <state width="972" height="312" key="GridCell.Tab.0.bottom" timestamp="1579007411795">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="873" height="312" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1575276165902" />
-    <state width="873" height="312" key="GridCell.Tab.0.right" timestamp="1575276165902">
+    <state width="972" height="312" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1579007411795" />
+    <state width="972" height="312" key="GridCell.Tab.0.center" timestamp="1579007411795">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="873" height="312" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1575276165902" />
-    <state width="873" height="312" key="GridCell.Tab.1.bottom" timestamp="1575276165902">
+    <state width="972" height="312" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1579007411795" />
+    <state width="972" height="312" key="GridCell.Tab.0.left" timestamp="1579007411795">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="873" height="312" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1575276165902" />
-    <state width="873" height="312" key="GridCell.Tab.1.center" timestamp="1575276165902">
+    <state width="972" height="312" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1579007411795" />
+    <state width="972" height="312" key="GridCell.Tab.0.right" timestamp="1579007411795">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="873" height="312" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1575276165902" />
-    <state width="873" height="312" key="GridCell.Tab.1.left" timestamp="1575276165902">
+    <state width="972" height="312" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1579007411795" />
+    <state width="972" height="312" key="GridCell.Tab.1.bottom" timestamp="1579007411795">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="873" height="312" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1575276165902" />
-    <state width="873" height="312" key="GridCell.Tab.1.right" timestamp="1575276165902">
+    <state width="972" height="312" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1579007411795" />
+    <state width="972" height="312" key="GridCell.Tab.1.center" timestamp="1579007411795">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="873" height="312" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1575276165902" />
-    <state width="873" height="312" key="GridCell.Tab.2.bottom" timestamp="1575276165902">
+    <state width="972" height="312" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1579007411795" />
+    <state width="972" height="312" key="GridCell.Tab.1.left" timestamp="1579007411795">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="873" height="312" key="GridCell.Tab.2.bottom/0.0.1280.680@0.0.1280.680" timestamp="1575276165902" />
-    <state width="873" height="312" key="GridCell.Tab.2.center" timestamp="1575276165902">
+    <state width="972" height="312" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1579007411795" />
+    <state width="972" height="312" key="GridCell.Tab.1.right" timestamp="1579007411795">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="873" height="312" key="GridCell.Tab.2.center/0.0.1280.680@0.0.1280.680" timestamp="1575276165902" />
-    <state width="873" height="312" key="GridCell.Tab.2.left" timestamp="1575276165902">
+    <state width="972" height="312" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1579007411795" />
+    <state width="972" height="312" key="GridCell.Tab.2.bottom" timestamp="1579007411796">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="873" height="312" key="GridCell.Tab.2.left/0.0.1280.680@0.0.1280.680" timestamp="1575276165902" />
-    <state width="873" height="312" key="GridCell.Tab.2.right" timestamp="1575276165902">
+    <state width="972" height="312" key="GridCell.Tab.2.bottom/0.0.1280.680@0.0.1280.680" timestamp="1579007411796" />
+    <state width="972" height="312" key="GridCell.Tab.2.center" timestamp="1579007411796">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="873" height="312" key="GridCell.Tab.2.right/0.0.1280.680@0.0.1280.680" timestamp="1575276165902" />
+    <state width="972" height="312" key="GridCell.Tab.2.center/0.0.1280.680@0.0.1280.680" timestamp="1579007411796" />
+    <state width="972" height="312" key="GridCell.Tab.2.left" timestamp="1579007411796">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="972" height="312" key="GridCell.Tab.2.left/0.0.1280.680@0.0.1280.680" timestamp="1579007411796" />
+    <state width="972" height="312" key="GridCell.Tab.2.right" timestamp="1579007411796">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="972" height="312" key="GridCell.Tab.2.right/0.0.1280.680@0.0.1280.680" timestamp="1579007411796" />
+    <state x="142" y="0" key="SettingsEditor" timestamp="1577692393108">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1577692393108" />
+    <state width="200" height="441" key="SqlResolveConfigurable" timestamp="1577689597833">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="200" height="441" key="SqlResolveConfigurable/0.0.1280.680@0.0.1280.680" timestamp="1577689597833" />
+    <state x="535" y="227" width="322" height="238" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1577694857007">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="535" y="227" width="322" height="238" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1280.680@0.0.1280.680" timestamp="1577694857007" />
+    <state x="221" y="0" key="com.intellij.database.dbimport.ImportDialog" timestamp="1577694790447">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="221" y="0" key="com.intellij.database.dbimport.ImportDialog/0.0.1280.680@0.0.1280.680" timestamp="1577694790447" />
+    <state x="357" y="0" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1577694831383">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="357" y="0" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1280.680@0.0.1280.680" timestamp="1577694831383" />
+    <state x="336" y="77" width="612" height="526" key="find.popup" timestamp="1579007213606">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="336" y="77" width="612" height="526" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1579007213606" />
+    <state x="91" y="0" key="new project wizard" timestamp="1575548652589">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="91" y="0" key="new project wizard/0.0.1280.680@0.0.1280.680" timestamp="1575548652589" />
+    <state x="297" y="151" key="run.anything.popup" timestamp="1577349543915">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1577349543915" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1575355201767">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1575355201767" />
   </component>
 </project>

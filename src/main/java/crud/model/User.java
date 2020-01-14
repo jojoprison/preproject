@@ -1,39 +1,41 @@
 package crud.model;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.*;
-import java.util.Objects;
+import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
-@Table(name = "users")
-public class User {
+@Table(name = "app_user")
+public class User implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String email;
+
+    @NotEmpty(message = "SSO_id may not be empty")
+    @Column(name = "sso_id", unique = true, nullable = false)
+    private String ssoId;
+
+    @NotEmpty(message = "Password may not be empty")
+    @Column(name = "password", nullable = false)
     private String password;
+
+    @NotEmpty(message = "Email may not be empty")
+    @Column(name = "email", nullable = false)
+    private String email;
+
     private String name;
     private Integer age;
-    private String role;
 
-    public User() { }
-
-    public User(String email, String password, String name, Integer age, String role) {
-        this.email = email;
-        this.password = password;
-        this.name = name;
-        this.age = age;
-        this.role = role;
-    }
-
-    public User(Long id, String email, String password, String name, Integer age, String role) {
-        this.id = id;
-        this.email = email;
-        this.password = password;
-        this.name = name;
-        this.age = age;
-        this.role = role;
-    }
+    @NotEmpty(message = "User Profiles may not be empty")
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "app_user_user_profile",
+            joinColumns = {@JoinColumn(name = "user_id")},
+            inverseJoinColumns = {@JoinColumn(name = "user_profile_id")})
+    private Set<UserProfile> userProfiles = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -43,12 +45,12 @@ public class User {
         this.id = id;
     }
 
-    public String getEmail() {
-        return email;
+    public String getSsoId() {
+        return ssoId;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setSsoId(String ssoId) {
+        this.ssoId = ssoId;
     }
 
     public String getPassword() {
@@ -57,6 +59,14 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getName() {
@@ -75,26 +85,45 @@ public class User {
         this.age = age;
     }
 
-    public String getRole() {
-        return role;
+    public Set<UserProfile> getUserProfiles() {
+        return userProfiles;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setUserProfiles(Set<UserProfile> userProfiles) {
+        this.userProfiles = userProfiles;
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return getEmail().equals(user.getEmail()) &&
-                getName().equals(user.getName()) &&
-                getAge().equals(user.getAge());
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (!(obj instanceof User))
+            return false;
+        User other = (User) obj;
+        if (id == null) {
+            if (other.id != null)
+                return false;
+        } else if (!id.equals(other.id))
+            return false;
+        if (ssoId == null) {
+            return other.ssoId == null;
+        } else return ssoId.equals(other.ssoId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getEmail(), getPassword(), getName(), getAge());
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((id == null) ? 0 : id.hashCode());
+        result = prime * result + ((ssoId == null) ? 0 : ssoId.hashCode());
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "User [id = " + id + ", ssoId = " + ssoId + ", email = " + email
+                + ", name = " + name + ", age = " + age + "]";
     }
 }

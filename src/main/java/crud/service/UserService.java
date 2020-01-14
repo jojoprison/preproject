@@ -6,17 +6,17 @@ import java.util.List;
 
 public interface UserService {
 
-    List<User> getAllUsers();
-
     User getById(long id);
 
-    User getByEmail(String email);
+    User getBySSO(String sso);
+
+    List<User> getAll();
 
     void add(User user);
 
     void update(User user);
 
-    void delete(User user);
+    void deleteBySSO(String sso);
 
-    boolean validate(String email, String password);
+    boolean isSSOUnique(Long id, String sso);
 }

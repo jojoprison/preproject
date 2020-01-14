@@ -1,94 +1,136 @@
 package crud.controller;
 
 import crud.model.User;
+import crud.model.UserProfile;
+import crud.service.UserProfileService;
 import crud.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
+import org.springframework.security.authentication.AuthenticationTrustResolver;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
+import java.util.Locale;
 
 @Controller
+@RequestMapping("/admin")
+@SessionAttributes("roles")
 public class AdminController {
 
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "/admin", method = RequestMethod.GET)
-    public ModelAndView getAllUsers() {
+    @Autowired
+    UserProfileService userProfileService;
 
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("admin/users");
+    @Autowired
+    AuthenticationTrustResolver authenticationTrustResolver;
 
-        List<User> users = userService.getAllUsers();
-        modelAndView.addObject("userList", users);
+    @Autowired
+    MessageSource messageSource;
 
-        return modelAndView;
+    @GetMapping(value = {"/", "/list"})
+    public String listUsers(ModelMap model) {
+
+        List<User> users = userService.getAll();
+
+        model.addAttribute("users", users);
+        model.addAttribute("logged_in_user", UserController.getPrincipal());
+
+        return "user_list";
     }
 
-    @RequestMapping(value = "/admin/add", method = RequestMethod.GET)
-    public ModelAndView modifyPageEmpty() {
+    @GetMapping(value = {"/new_user"})
+    public String newUserPage(ModelMap model) {
 
-        return new ModelAndView("admin/user_modify");
+        User user = new User();
+
+        model.addAttribute("user", user);
+        model.addAttribute("edit", false);
+        model.addAttribute("logged_in_user", UserController.getPrincipal());
+
+        return "admin/registration";
     }
 
-    @RequestMapping(value = "/admin/update", method = RequestMethod.GET)
-    public ModelAndView modifyPage(@RequestParam("id") Long id) {
+    @PostMapping(value = {"/new_user"})
+    public String newUser(@Valid User user, BindingResult result, ModelMap model) {
 
-        ModelAndView modelAndView = new ModelAndView("admin/user_modify");
+        if (result.hasErrors()) {
+            return "admin/registration";
+        }
 
-        modelAndView.addObject("user", userService.getById(id));
+        if (!userService.isSSOUnique(user.getId(), user.getSsoId())) {
 
-        return modelAndView;
-    }
+            FieldError ssoError = new FieldError("user", "ssoId",
+                    messageSource.getMessage("non.unique.ssoId",
+                            new String[]{user.getSsoId()}, Locale.getDefault()));
 
-    @RequestMapping(value = "/admin/update", method = RequestMethod.POST)
-    public ModelAndView updateUser(@ModelAttribute("user") User user) {
+            result.addError(ssoError);
 
-        ModelAndView modelAndView = new ModelAndView();
-//        modelAndView.setViewName("/admin");
-        modelAndView.setViewName("redirect:/admin");
-
-        userService.update(user);
-
-        return modelAndView;
-    }
-
-    @RequestMapping(value = "/admin/add", method = RequestMethod.POST)
-    public ModelAndView addUser(@ModelAttribute("user") User user) {
-
-        ModelAndView modelAndView = new ModelAndView();
-//        modelAndView.setViewName("/admin");
-        modelAndView.setViewName("redirect:/admin");
+            return "admin/registration";
+        }
 
         userService.add(user);
 
-        return modelAndView;
+        model.addAttribute("success", "User " + user.getName() +
+                ", " + user.getEmail() + " registered successfully!");
+        model.addAttribute("logged_in_user", UserController.getPrincipal());
+
+        return "admin/registration_success";
     }
 
-    @RequestMapping(value = "/admin/delete", method = RequestMethod.POST)
-    public ModelAndView deleteUser(@RequestParam("id") Long id) {
+    @GetMapping(value = {"/edit_user_{ssoId}"})
+    public String editUserPage(@PathVariable String ssoId, ModelMap model) {
 
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("redirect:/admin");
+        User user = userService.getBySSO(ssoId);
 
-        User userDelete = userService.getById(id);
+        model.addAttribute("user", user);
+        model.addAttribute("edit", true);
+        model.addAttribute("logged_in_user", UserController.getPrincipal());
 
-        userService.delete(userDelete);
-
-        return modelAndView;
+        return "admin/registration";
     }
 
-    @RequestMapping(value = "/error", method = RequestMethod.GET)
-    public ModelAndView errorPage() {
+    @PostMapping(value = {"/edit_user_{ssoId}"})
+    public String updateUser(@Valid User user, BindingResult result,
+                             ModelMap model, @PathVariable String ssoId) {
 
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("error_access");
+        if (result.hasErrors()) {
+            return "admin/registration";
+        }
 
-        return modelAndView;
+        userService.update(user);
+
+        model.addAttribute("success", "User " + user.getName() +
+                ", " + user.getEmail() + " updated successfully!");
+        model.addAttribute("logged_in_user", UserController.getPrincipal());
+
+        return "admin/registration_success";
+    }
+
+    @GetMapping(value = {"/delete_user_{ssoId}"})
+    public String deleteUser(@PathVariable String ssoId) {
+
+        userService.deleteBySSO(ssoId);
+
+        return "redirect:/admin/list";
+    }
+
+    @GetMapping(value = "/access_denied")
+    public String accessDeniedPage(ModelMap model) {
+
+        model.addAttribute("logged_in_user", UserController.getPrincipal());
+
+        return "admin/access_denied";
+    }
+
+    @ModelAttribute("roles")
+    public List<UserProfile> initializeProfiles() {
+        return userProfileService.getAll();
     }
 }
